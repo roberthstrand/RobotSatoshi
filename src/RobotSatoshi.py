@@ -2,10 +2,6 @@ import os
 import discord
 import blockchain
 
-token = os.environ.get('RobotSatoshiToken')
-
-blockchainUrl = 'https://blockchain.info/ticker'
-
 client = discord.Client()
 # List of currency available
 availableCurrency = ['USD', 'EUR', 'SEK', 'JPY', 'ISK', 'AUD', 'CAD', 'NZD', 'GBP', 'KRW']
@@ -48,4 +44,5 @@ async def on_message(message):
         await message.author.send('Want to add me to your server? No problem! :sweat_smile: Follow this link, but remember that you have to be an admin to add me to servers - http://str.onl/RobotSatoshi')
 
 # Run the client
+token = os.environ.get('RobotSatoshiToken')
 client.run(token)
