@@ -19,10 +19,12 @@ async def on_message(message):
     # Safegaurd, make sure that the bot doesn't respond to itself
     if message.author == client.user:
         return
+
     # Show available currency
     if message.content.startswith('!currency'):
         await message.channel.send('The following currencies are available:')
         await message.channel.send(', '.join(str(c) for c in availableCurrency))
+
     # Show current BTC price, based on what currency the user wants
     if message.content.startswith('!price'):
         # Split the incoming message, and set the currency as the second result
@@ -40,6 +42,10 @@ async def on_message(message):
             await message.channel.send("The currency you've chosen is not valid. You can check what is available by using the !currency command")
         else:
             await message.channel.send(blockchain.buy(currency))
+
+    # Displays link that will add bot to a server that the user has access to
+    if message.content.startswith('!link'):
+        await message.author.send('Want to add me to your server? No problem! :sweat_smile: Follow this link, but remember that you have to be an admin to add me to servers - http://str.onl/RobotSatoshi')
 
 # Run the client
 client.run(token)
