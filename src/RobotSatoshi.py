@@ -37,7 +37,7 @@ async def on_message(message):
         elif currency not in availableCurrency and not False:
             await message.channel.send("The currency you've chosen is not valid. You can check what is available by using the !currency command")
         else:
-            await message.channel.send(blockchain.buy(currency))
+            await message.channel.send(blockchain.buy(currency=currency))
 
     # Displays link that will add bot to a server that the user has access to
     if message.content.startswith('!link'):

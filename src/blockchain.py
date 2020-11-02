@@ -3,6 +3,8 @@ import re
 blockchainUrl = 'https://blockchain.info/ticker'
 
 def buy(currency):
+    # Function for getting the current buy value for bitcoin, based on what currency the user wants it in
+    
     # Get the request from blockchain
     request = requests.get(blockchainUrl).json()
     request = str(request[currency])
