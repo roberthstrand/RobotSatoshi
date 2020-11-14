@@ -130,3 +130,6 @@ dmypy.json
 
 # Local test file
 localtest.py
+
+# k8s secret
+secret.yml

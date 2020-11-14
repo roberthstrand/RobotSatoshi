@@ -1,3 +1,4 @@
 # Requirements
 discord.py
 requests
+logging

@@ -15,6 +15,6 @@ LABEL maintainer="RoberthStrand" \
     org.label-schema.version=$VERSION \
     org.label-schema.schema-version="1.0"
 
-COPY / /app
+COPY /src /app
 
-ENTRYPOINT [ "python3", "/app/src/RobotSatoshi.py" ]
+ENTRYPOINT [ "python3", "/app/robotsatoshi.py" ]

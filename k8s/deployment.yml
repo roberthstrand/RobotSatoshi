@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: robotsatoshi
+  labels:
+    app: robotsatoshi
+spec:
+  selector:
+    matchLabels:
+      app: robotsatoshi
+  template:
+    metadata:
+      labels:
+        app: robotsatoshi
+    spec:
+      containers:
+      - name: robotsatoshi
+        image: roberthstrand/robotsatoshi:1.0.0
+        env:
+          - name: RobotSatoshiToken
+            valueFrom:
+              secretKeyRef:
+                name: robotsatoshi
+                key: RobotSatoshiToken
