@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: robotsatoshi
-        image: roberthstrand/robotsatoshi:1.0.0
+        image: roberthstrand/robotsatoshi:1.0.1
         env:
           - name: RobotSatoshiToken
             valueFrom:

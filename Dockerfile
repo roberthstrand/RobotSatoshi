@@ -17,4 +17,6 @@ LABEL maintainer="RoberthStrand" \
 
 COPY /src /app
 
+# RUN ln -sf /dev/stdout /var/log/robotsatoshi.log
+
 ENTRYPOINT [ "python3", "/app/robotsatoshi.py" ]
